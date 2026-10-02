@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#102b36">
+  <meta name="description" content="Kuinka monen poron arvoinen olet? Täytä leikkimielinen porolaskuri ja selvitä tulos.">
+  <title>Porolaskuri — kuinka monta poroa?</title>
+  <style>
+:root{color-scheme:light;--ink:#102b36;--muted:#59717b;--paper:#f2f6f7;--line:#d6e1e5;--accent:#c4f077;--orange:#ffbc70}*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.5 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input{font:inherit}button,a,input{ -webkit-tap-highlight-color:transparent}button{cursor:pointer}a{color:inherit}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #007b9e;outline-offset:4px}.topbar{min-height:84px;padding:20px max(24px,calc((100vw - 1160px)/2));display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line);gap:20px}.brand{text-decoration:none;font-size:16px;font-weight:800;letter-spacing:.13em;display:flex;align-items:center;gap:12px}.brand span{font-size:30px}.north{font-size:12px;font-weight:650;letter-spacing:.15em;color:var(--muted)}main{max-width:1160px;margin:auto;padding:40px 24px 0}.intro{margin-bottom:32px}.eyebrow{font-size:12px;letter-spacing:.15em;font-weight:750;color:var(--muted);margin:0 0 8px}h1{font-size:clamp(36px,5vw,62px);line-height:1.1;letter-spacing:-.05em;margin:0 0 16px;font-weight:750}h1 em{font-family:Georgia,serif;font-weight:400}.intro>p:last-child{margin:0;color:var(--muted);max-width:560px}.layout{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:32px;align-items:start}form{min-width:0;background:white;border:1px solid var(--line);border-radius:20px;overflow:hidden}fieldset{border:0;margin:0;min-width:0}.profile{padding:24px 28px}.profile legend{float:left;width:100%;font-weight:700;margin-bottom:12px}.profile-options{clear:both;display:grid;grid-template-columns:1fr 1fr;gap:8px;background:var(--paper);padding:5px;border-radius:12px}.profile-options label{position:relative;cursor:pointer}.profile-options input{position:absolute;opacity:0;width:1px;height:1px}.profile-options span{display:block;text-align:center;padding:12px 8px;border-radius:9px;color:var(--muted);font-weight:650}.profile-options input:checked+span{background:var(--ink);color:white}.profile-options input:focus-visible+span{outline:3px solid #007b9e;outline-offset:2px}.hint{color:var(--muted);font-size:14px;margin:12px 0 0}.section{padding:26px 28px;border-top:1px solid var(--line)}.section-heading{display:flex;align-items:center;gap:14px;margin-bottom:22px}.section-heading>span{font-size:12px;font-weight:750;color:var(--muted);border:1px solid var(--line);border-radius:50%;width:30px;height:30px;display:grid;place-items:center}h2{font-size:20px;letter-spacing:-.025em;margin:0}.basic-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}.field-label{display:flex;align-items:center;justify-content:space-between;font-weight:650;margin-bottom:8px}.field-label>span{color:var(--muted);font-size:14px;font-weight:400}.numeric input{width:100%;border:1px solid var(--line);border-radius:10px;background:var(--paper);padding:12px 14px;font-weight:700;font-size:24px;color:var(--ink)}.slider{width:100%;margin:16px 0 0;accent-color:var(--ink);height:24px;cursor:pointer}.range-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}.trait{padding:0;margin:0 0 22px}.trait:last-child{margin-bottom:0}.trait legend{font-weight:650;margin-bottom:10px}.choices{display:flex;flex-wrap:wrap;gap:8px}.choice{position:relative;cursor:pointer}.choice input{position:absolute;opacity:0;width:1px;height:1px}.choice span{min-height:44px;display:flex;gap:8px;align-items:center;padding:9px 12px;border:1px solid var(--line);border-radius:9px;font-size:14px;background:white;transition:background .12s}.choice input:checked+span{border-color:var(--ink);background:#e7eff2;box-shadow:inset 0 0 0 1px var(--ink);font-weight:650}.choice input:focus-visible+span{outline:3px solid #007b9e;outline-offset:3px}.swatch{height:12px;width:12px;border-radius:50%;background:var(--swatch);border:1px solid #102b3633;flex-shrink:0}.tags-section .section-heading{margin-bottom:0}.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}.tags .choice span{border-radius:30px;padding:9px 12px}.tags input:checked+span{background:var(--accent)}.submit-row{padding:24px 28px;border-top:1px solid var(--line)}.primary{width:100%;border:0;border-radius:12px;min-height:56px;background:var(--ink);color:white;font-size:17px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:14px}.primary:hover{background:#204554}.submit-row>.hint{text-align:center;font-size:12px}.result{position:sticky;top:24px;border-radius:20px;background:var(--ink);color:#fff;overflow:hidden;border:1px solid #204554;min-height:470px;background-image:radial-gradient(ellipse at 95% 0%,#285c54 0,transparent 60%)}.result-top{padding:22px 24px;display:flex;justify-content:space-between;font-size:11px;letter-spacing:.14em;color:#b4cbd3;font-weight:700}.result-top>span:last-child{color:var(--accent);font-size:20px;line-height:1}.result-content{padding:20px 24px 28px;text-align:center;min-height:326px}.reindeer{font-size:64px;line-height:1.3;margin-bottom:22px}.result h2{font:28px/1.2 Georgia,serif}.result-content>p{color:#b4cbd3;font-size:14px;max-width:240px;margin:20px auto 0}#count{font-size:clamp(66px,8vw,96px);font-weight:750;line-height:1.15;color:var(--accent);letter-spacing:-.06em;display:block;margin-top:14px}.unit{font:26px Georgia,serif}.result-bottom{padding:20px 24px;border-top:1px solid #ffffff26;display:flex;align-items:center;gap:14px}.result-bottom>span{font-size:28px;color:var(--orange)}.result-bottom p{font-size:12px;color:#b4cbd3;margin:0}#result-note{color:var(--orange)}#form-error{color:#9b2222;font-size:14px;margin:0 0 14px}.result.revealed .reindeer{font-size:42px;margin-bottom:10px}.result.revealed h2{font-size:23px}footer{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:32px 0;color:var(--muted);font-size:12px}footer>span{font-weight:700;white-space:nowrap}footer p{margin:0;text-align:right}[hidden]{display:none!important}@media(max-width:850px){.layout{grid-template-columns:minmax(0,1fr) 280px;gap:20px}.profile,.section,.submit-row{padding-left:20px;padding-right:20px}}@media(max-width:680px){.topbar{min-height:68px;padding:14px 20px}.north{display:none}main{padding:28px 16px 0}.intro{margin-bottom:24px}.intro>p:last-child{font-size:15px}.layout{grid-template-columns:1fr;gap:20px}.result{position:static;min-height:0}.result-content{min-height:240px;padding-top:6px}.result-bottom{justify-content:center}.reindeer{font-size:52px;margin-bottom:16px}.section{padding-top:24px;padding-bottom:24px}.basic-grid{gap:16px}.choice span{padding:10px 12px}.result-top{padding:20px}footer{align-items:flex-start;flex-direction:column;gap:8px;padding:24px 4px}footer p{text-align:left}.result.revealed #count{font-size:88px}}@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+.slider{min-height:44px;touch-action:pan-y}.disclaimer{margin-top:10px!important}#price-result{font-size:12px}
+</style>
+
+</head>
+<body>
+  <header class="topbar"><a class="brand" href="./"><span aria-hidden="true">🦌</span> POROLASKURI</a><span class="north">LEIKKIMIELINEN LAPIN MITTA</span></header>
+  <main>
+    <div class="intro"><p class="eyebrow">KAMELIT VAIHTUIVAT POROIHIN</p><h1>Kuinka monta <em>poroa?</em></h1><p>Sinä, kumppanisi tai kaverisi. Valitse ominaisuudet ja selvitä poroluku.</p></div>
+    <div class="layout">
+      <form id="calculator">
+        <fieldset class="profile"><legend>Kenet lasket?</legend><div class="profile-options"><label><input type="radio" name="profile" value="male" checked><span>Poikaystävä</span></label><label><input type="radio" name="profile" value="female"><span>Tyttöystävä</span></label></div><p class="hint">Voit laskea myös itsesi valitsemalla sopivan lomakkeen.</p></fieldset>
+        <section class="section"><div class="section-heading"><span>01</span><h2>Perustiedot</h2></div><div class="basic-grid"><div><label class="field-label" for="age">Ikä <span>vuotta</span></label><div class="numeric"><input id="age" name="age" type="number" min="18" max="100" step="1" value="25" required inputmode="numeric"></div><input class="slider" id="age-range" type="range" min="18" max="100" value="25" aria-label="Ikä vuosina" oninput="document.getElementById('age').value=this.value" onchange="document.getElementById('age').value=this.value"><div class="range-labels"><span>18 vuotta</span><span>100 vuotta</span></div></div><div><label class="field-label" for="height">Pituus <span>cm</span></label><div class="numeric"><input id="height" name="height" type="number" min="140" max="220" step="1" value="175" required inputmode="numeric"></div><input class="slider" id="height-range" type="range" min="140" max="220" value="175" aria-label="Pituus senttimetreinä" oninput="document.getElementById('height').value=this.value" onchange="document.getElementById('height').value=this.value"><div class="range-labels"><span>140 cm</span><span>220 cm</span></div></div></div></section>
+        <section class="section"><div class="section-heading"><span>02</span><h2>Ominaisuudet</h2></div><div id="traits"></div></section>
+        <section class="section tags-section"><div class="section-heading"><span>03</span><h2>Persoonallisuus</h2></div><p class="hint">Valitse kaikki sopivat. Nämä ovat vapaaehtoisia.</p><div id="tags" class="tags"></div></section>
+        <div class="submit-row"><p id="form-error" role="alert" hidden></p><button type="submit" class="primary">Laske poroarvo <span aria-hidden="true">🦌</span></button><p class="hint">Tiedot käsitellään vain omassa selaimessasi.</p></div>
+      </form>
+      <aside class="result" id="result" aria-labelledby="result-title"><div class="result-top"><span>POROLASKURIN TULOS</span><span aria-hidden="true">✦</span></div><div class="result-content" aria-live="polite" aria-atomic="true"><div class="reindeer" aria-hidden="true">🦌</div><h2 id="result-title">Porot odottavat.</h2><div id="result-value" hidden><span id="count">0</span><span class="unit">poroa</span></div><p id="result-description">Täytä ominaisuudet ja laske, minkä kokoisen tokan saat.</p><p id="price-result" hidden></p><p id="result-note" hidden>Muokkasit valintoja. Laske uusi tulos.</p></div><div class="result-bottom"><span aria-hidden="true">❄</span><div><p>Hintaoletukset: kameli 1 500–2 000 €<br>Poro 900–1 000 €</p><p class="disclaimer">Pelkkää hupia. Ihmisen arvoa ei mitata poroissa.</p></div></div></aside>
+    </div>
+    <footer><span>🦌 Porolaskuri</span><p>Oma leikkimielinen pisteytys. Ei evästeitä, seurantaa tai tietojen tallennusta.</p></footer>
+  </main>
+<script>
+'use strict';
+const CONFIG = {
+  male: { hair: ['Kalju','Lyhyt','Keskipitkä','Pitkä','Afro','Rastapalmikot','Pompadour'], extraLabel: 'Parta', extra: ['Ei','Sänki','Lyhyt parta','Täysparta'], body: ['Laiha','Keskiverto','Vahva','Painava'], tags: ['Humoristinen','Romanttinen','Suojeleva','Musiikillinen','Varakas','Seikkailunhaluinen','Älykäs','Uskollinen','Huolehtiva','Itsevarma','Luova','Urheilullinen','Salaperäinen','Lempeä','Kunnianhimoinen','Ruokaguru','Yölintu','Aamuvirkku','Tekniikkaosaaja','Kirjamato','Juhlaeläin','Kotihiiri','Sosiaalinen perhonen','Kamelinratsastaja','Aavikkonavigaattori','Aarteenetsijä'] },
+  female: { hair: ['Hyvin lyhyt','Lyhyt','Poninhäntä','Pitkä','Rastapalmikot'], extraLabel: 'Rintojen koko', extra: ['A-kuppi','B-kuppi','C-kuppi','D-kuppi'], body: ['Laiha','Keskiverto','Urheilullinen','Täyteläinen'], tags: ['Humoristinen','Romanttinen','Huolehtiva','Musiikillinen','Varakas','Elegantti','Älykäs','Uskollinen','Itsenäinen','Itsevarma','Luova','Sirokas','Salaperäinen','Lempeä','Kunnianhimoinen','Ruokaguru','Yölintu','Aamuvirkku','Muotitietoinen','Kirjamato','Juhlaeläin','Kotihiiri','Sosiaalinen perhonen','Aavikkoprinsessa','Vatsatanssija','Jalokiviharrastaja'] }
+};
+const COLORS = ['Musta','Ruskea','Vaalea','Punainen','Valkoinen','Muut'];
+const EYES = ['Ruskea','Sininen','Vihreä','Harmaa','Musta'];
+const SWATCHES = {Musta:'#242628',Ruskea:'#855438',Vaalea:'#e3c26f',Punainen:'#b76037',Valkoinen:'#f4f4f4',Muut:'#b5a4d9',Sininen:'#5685b3',Vihreä:'#547d56',Harmaa:'#929da3'};
+const form = document.querySelector('#calculator');
+const draft = { male: {}, female: {} };
+let profile = 'male';
+let hasResult = false;
+
+function makeChoices(name, title, values, multiple = false, useSwatches = false) {
+  const group = document.createElement(multiple ? 'div' : 'fieldset');
+  group.className = multiple ? 'tags-list' : 'trait';
+  if (!multiple) { const legend = document.createElement('legend'); legend.textContent = title; group.append(legend); }
+  const choices = document.createElement('div'); choices.className = multiple ? 'tags' : 'choices';
+  values.forEach((value, index) => {
+    const label = document.createElement('label'); label.className = 'choice';
+    const input = document.createElement('input'); input.type = multiple ? 'checkbox' : 'radio'; input.name = name; input.value = value;
+    if (!multiple) { input.required = true; input.checked = draft[profile][name] ? draft[profile][name] === value : index === (name === 'hair' || name === 'body' ? 1 : 0); }
+    else input.checked = (draft[profile].tags || []).includes(value);
+    const text = document.createElement('span');
+    if (useSwatches) { const swatch = document.createElement('i'); swatch.className = 'swatch'; swatch.style.setProperty('--swatch',SWATCHES[value]); swatch.setAttribute('aria-hidden','true'); text.append(swatch); }
+    text.append(document.createTextNode(value)); label.append(input,text); choices.append(label);
+  }); group.append(choices); return group;
+}
+function renderTraits() {
+  const c = CONFIG[profile]; const traits = document.querySelector('#traits'); traits.replaceChildren();
+  traits.append(makeChoices('color','Hiusten väri',COLORS,false,true),makeChoices('hair',profile === 'male' ? 'Hiustyyli' : 'Hiusten pituus',c.hair),makeChoices('eyes','Silmien väri',EYES,false,true),makeChoices('extra',c.extraLabel,c.extra),makeChoices('body',profile === 'male' ? 'Vartalotyyppi' : 'Vartalo',c.body));
+  document.querySelector('#tags').replaceChildren(makeChoices('tags','',c.tags,true));
+}
+function remember() { const data = new FormData(form); ['color','hair','eyes','extra','body'].forEach(key => draft[profile][key] = data.get(key)); draft[profile].tags = data.getAll('tags'); }
+function markChanged() { if (hasResult) document.querySelector('#result-note').hidden = false; }
+form.addEventListener('change',event => {
+  if (event.target.name === 'profile') { remember(); profile = event.target.value; renderTraits(); }
+  markChanged();
+});
+function syncNumericInput(id, source) {
+  const number = document.getElementById(id);
+  const range = document.getElementById(id + '-range');
+  if (source === 'range') number.value = range.value;
+  else if (number.value !== '' && number.validity.valid) range.value = number.value;
+  markChanged();
+}
+['age','height'].forEach(id => {
+  const number = document.getElementById(id), range = document.getElementById(id+'-range');
+  ['input','change'].forEach(event => {
+    range.addEventListener(event,() => syncNumericInput(id,'range'));
+    number.addEventListener(event,() => syncNumericInput(id,'number'));
+  });
+});
+
+// Original, deterministic entertainment score. This is not the reference site's formula.
+function calculateCamelScore(data) {
+  const age = Number(data.age), height = Number(data.height), c = CONFIG[data.profile];
+  if (!c || !Number.isInteger(age) || age < 18 || age > 100 || !Number.isInteger(height) || height < 140 || height > 220) throw new Error('Tarkista ikä (18–100) ja pituus (140–220 cm).');
+  for (const [key,values] of Object.entries({color:COLORS,hair:c.hair,eyes:EYES,extra:c.extra,body:c.body})) if (!values.includes(data[key])) throw new Error('Valitse kaikki ominaisuudet.');
+  let score = 30 + Math.max(0,18-Math.abs(age-30)/4) + Math.max(0,12-Math.abs(height-175)/4);
+  score += [5,6,9,8,6,7][COLORS.indexOf(data.color)] + [5,8,9,7,6][EYES.indexOf(data.eyes)];
+  score += (data.profile === 'male' ? [5,7,8,9,10,11,12] : [6,8,10,12,11])[c.hair.indexOf(data.hair)];
+  score += (data.profile === 'male' ? [5,7,9,11] : [8,8,8,8])[c.extra.indexOf(data.extra)];
+  score += [6,8,10,9][c.body.indexOf(data.body)];
+  const tags = [...new Set(data.tags || [])].filter(tag => c.tags.includes(tag));
+  score += tags.length * 3;
+  for(const pair of [['Humoristinen','Romanttinen'],['Uskollinen','Huolehtiva'],['Älykäs','Luova'],['Yölintu','Kotihiiri'],['Musiikillinen','Juhlaeläin']]) if(pair.every(tag => tags.includes(tag)))score+=5;
+  return Math.round(score);
+}
+const PRICES = { camelMin: 1500, camelMax: 2000, reindeerMin: 900, reindeerMax: 1000 };
+function calculateValuation(data) {
+  const camels = calculateCamelScore(data);
+  return {
+    camels,
+    count: Math.round(camels * ((PRICES.camelMin + PRICES.camelMax) / 2) / ((PRICES.reindeerMin + PRICES.reindeerMax) / 2)),
+    min: Math.round(camels * PRICES.camelMin / PRICES.reindeerMax),
+    max: Math.round(camels * PRICES.camelMax / PRICES.reindeerMin)
+  };
+}
+form.addEventListener('submit',event => {
+  event.preventDefault(); const values = new FormData(form); const data = Object.fromEntries(values); data.tags = values.getAll('tags');
+  const error = document.querySelector('#form-error');
+  try {
+    const valuation = calculateValuation(data); const count = valuation.count; error.hidden=true; hasResult=true;
+    document.querySelector('#count').textContent=count; document.querySelector('#result-value').hidden=false;
+    document.querySelector('#result-title').textContent='Sinun poroarvosi';
+    document.querySelector('#result-description').textContent=count >= 150 ? 'Kokonainen suurtökka! Tälle porukalle tarvitaan jo kunnon laidun.' : count >= 100 ? 'Melkoinen tokka! Näillä poroilla täyttää jo tunturin rinteen.' : 'Komea oma tokka. Näillä poroilla kelpaa kulkea tunturissa.';
+    document.querySelector('#price-result').textContent = 'Hintahaarukalla noin ' + valuation.min + '–' + valuation.max + ' poroa. Keskihinta-arvio: 1 750 € / 950 €.';
+    document.querySelector('#price-result').hidden=false;
+    document.querySelector('#result-note').hidden=true; document.querySelector('#result').classList.add('revealed');
+    if(window.matchMedia('(max-width:680px)').matches)document.querySelector('#result').scrollIntoView({behavior:window.matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'});
+  } catch(e) {error.textContent=e.message; error.hidden=false;}
+});
+renderTraits();
+
+</script>
+</body>
+</html>
